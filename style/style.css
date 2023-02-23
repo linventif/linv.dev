@@ -1,0 +1,42 @@
+body {
+    color:white;
+    background-color:#292C36;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+header, footer {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: #3A3E49;
+}
+
+header a, footer a {
+    text-decoration: none;
+    margin: 0%;
+    color: white;
+    font-size: 180%;
+}
+
+header a:hover, footer a:hover {
+    color: #BC7819;
+}
+
+main {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
