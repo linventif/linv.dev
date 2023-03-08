@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="keywords" content="inventif, linventif, gmod, garrys mod, addons, addon, script, map, maps, garry's mod, github, discord, aide-server, mtx, free, gratuits, gmod addon gratuit, gmod addons gratuits"/>
+        <meta name="keywords" content="inventif, linventif, gmod, garrys mod, addons, addon, script, map, maps, garry's mod, github, discord, aide-server, mtx, free, gratuits, gmod addon gratuit, gmod addons gratuits, gmod addons free, gmod addons free, gmod addons, linv.dev, api.linv.dev, ventif"/>
         <meta name="description" content="This is a website"/>
         <meta name="copyright" content="Copyright © 2022"/>
         <meta name="author" content="Linventif"/>
@@ -24,17 +24,44 @@
         <a href="https://linv.dev/github">Github</a>
     </header>
 
-    <main>
+    <main id = "docs">
         <h1>Documentation</h1>
         <p>Here you can find all the documentation of the creations of Linventif.</p>
         <div id = "library">
             <h2>Library</h2>
             <p>LinvLibrary is a library that contains all the functions that I use in my addons.</p>
-            <h3>Installation</h3>
+            <h3 id="install">Installation</h3>
             <ul>
                 <li>Add <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2882747990">Linventif's Stuff</a> to your gmod collection.</li>
                 <li>Or manualaly download <a href="https://github.com/linventif/gmod-lib">Linventif's Stuff</a> from my github and put it in your addons folder</li>
             </ul>
+            <h3 id="add_theme">Add Theme</h3>
+            <p>To add a theme, you must ca workshop content or just put it in your lua/autorun/client folder and put the following code in it.</p>
+            <p>Replace "custom-theme" with the name of your them and replace the colors with your own.</p><br>
+            <code>if !LinvLib || LinvLib.Info.version < "0.2.5" then<br></code>
+            <code>&nbsp;&nbsp;&nbsp;print(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")<br></code>
+            <code>&nbsp;&nbsp;&nbsp;print(" - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ")<br></code>
+            <code>&nbsp;&nbsp;&nbsp;print(" - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Linventif Library is not installed or outdated. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ")<br></code>
+            <code>&nbsp;&nbsp;&nbsp;print(" - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Information and Download Links : https://linv.dev/docs/#library &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ")<br></code>
+            <code>&nbsp;&nbsp;&nbsp;print(" - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ")<br></code>
+            <code>&nbsp;&nbsp;&nbsp;print(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")<br></code>
+            <code>&nbsp;&nbsp;&nbsp;return<br></code>
+            <code>end<br></code>
+            <code><br></code>
+            <code>local custom_theme = {<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["background"] = Color(41, 44, 54),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["border"] = Color(118, 126, 148),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["element"] = Color(58, 62, 73),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["accent"] = Color(79, 84, 98),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["hover"] = Color(190, 132, 50),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["text"] = Color(255, 255, 255),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["icon"] = Color(255, 255, 255),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["red"] = Color(221, 93, 76),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["green"] = Color(76, 221, 76),<br></code>
+            <code>&nbsp;&nbsp;&nbsp;["orange"] = Color(255, 140, 0),<br></code>
+            <code>}<br></code>
+            <code><br></code>
+            <code>LinvLib:AddTheme("custom-theme", custom_theme)<br></code>
         </div>
     </main>
 

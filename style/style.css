@@ -47,6 +47,15 @@ main h3 {
     margin-bottom: 20px;
 }
 
+#docs {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#docs div p, #docs div code {
+    margin-left: 50px;
+}
+
 #linventif div {
     background-size: 1500px;
     background-repeat: no-repeat;
