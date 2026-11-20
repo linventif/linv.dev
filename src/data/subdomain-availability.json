@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-11-20T16:56:26.851Z",
+  "projects": {
+    "open-process": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://open-process.linv.dev/",
+        "addresses": [
+          "104.18.8.62",
+          "104.18.9.62",
+          "2606:4700::6812:83e",
+          "2606:4700::6812:93e"
+        ]
+      }
+    },
+    "ndl25": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://ndl25.linv.dev/",
+        "addresses": [
+          "104.18.8.62",
+          "104.18.9.62",
+          "2606:4700::6812:83e",
+          "2606:4700::6812:93e"
+        ]
+      }
+    },
+    "nuit-de-linfo-2025": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://nuit-de-linfo-2025.linv.dev/",
+        "addresses": [
+          "104.18.8.62",
+          "104.18.9.62",
+          "2606:4700::6812:83e",
+          "2606:4700::6812:93e"
+        ]
+      }
+    },
+    "m2-front-ctp": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://m2-front-ctp.linv.dev/",
+        "addresses": [
+          "104.18.8.62",
+          "104.18.9.62",
+          "2606:4700::6812:83e",
+          "2606:4700::6812:93e"
+        ]
+      }
+    },
+    "gmi": {
+      "site": {
+        "status": "offline",
+        "addresses": []
+      }
+    },
+    "discord": {
+      "site": {
+        "status": "offline",
+        "addresses": []
+      }
+    }
+  }
+}

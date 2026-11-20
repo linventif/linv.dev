@@ -20,8 +20,11 @@ type Availability = {
 };
 type Project = { id: string; title: string; site?: string; repository?: string };
 
-const projectsFile = new URL('../src/data/projects.json', import.meta.url);
-const availabilityFile = new URL('../src/data/availability.json', import.meta.url);
+const catalogues = [
+  { name: 'Sites', source: 'projects.json', output: 'availability.json' },
+  { name: 'Raccourcis', source: 'shortcuts.json', output: 'shortcut-availability.json' },
+  { name: 'Sous-domaines', source: 'subdomains.json', output: 'subdomain-availability.json' },
+];
 const timeoutMs = 12_000;
 const concurrency = 4;
 const maxRedirects = 5;
@@ -215,37 +218,45 @@ async function run(): Promise<void> {
   if (args.some(arg => arg !== '--check') || args.length > 1) {
     throw new Error('Utilisation : node scripts/scan-projects.ts [--check]');
   }
-  const projects = parseProjects(await readJson(projectsFile));
-  const sites = projects.filter(project => project.site).length;
-  const repositories = projects.filter(project => project.repository).length;
-  if (args.includes('--check')) {
-    const snapshot = await readJson(availabilityFile);
-    validateAvailability(snapshot, projects);
-    console.log(`Validation : ${projects.length} projets, ${sites} sites et ${repositories} dépôts. Instantané du ${snapshot.checkedAt}.`);
-    return;
-  }
-
-  const allowedHosts = new Set(projects.filter(project => project.site).map(project => httpsUrl(project.site, 'Site').hostname));
-  const results: Record<string, ProjectAvailability> = Object.create(null);
-  const tasks: Array<() => Promise<void>> = [];
-  for (const project of projects) {
-    const result: ProjectAvailability = {};
-    results[project.id] = result;
-    if (project.site) tasks.push(async () => { result.site = await checkSite(project.site!, allowedHosts); });
-    if (project.repository) tasks.push(async () => { result.repository = await checkRepository(project.repository!); });
-  }
-  let next = 0;
-  await Promise.all(Array.from({ length: Math.min(concurrency, tasks.length) }, async () => {
-    while (next < tasks.length) {
-      const task = tasks[next++];
-      if (task) await task();
+  const inputs = await Promise.all(catalogues.map(async catalogue => ({
+    ...catalogue,
+    projects: parseProjects(await readJson(new URL(`../src/data/${catalogue.source}`, import.meta.url))),
+  })));
+  const allowedHosts = new Set(inputs.flatMap(catalogue => catalogue.projects.filter(project => project.site).map(project => httpsUrl(project.site, 'Site').hostname)));
+  // Known redirect targets are explicit catalogue destinations, not arbitrary hosts.
+  for (const catalogue of inputs) {
+    const projects = catalogue.projects;
+    const availabilityFile = new URL(`../src/data/${catalogue.output}`, import.meta.url);
+    const sites = projects.filter(project => project.site).length;
+    const repositories = projects.filter(project => project.repository).length;
+    if (args.includes('--check')) {
+      const snapshot = await readJson(availabilityFile);
+      validateAvailability(snapshot, projects);
+      console.log(`${catalogue.name} : ${sites} destinations vérifiées, instantané du ${snapshot.checkedAt}.`);
+      continue;
     }
-  }));
-  const snapshot: Availability = { checkedAt: new Date().toISOString(), projects: results };
-  await writeFile(availabilityFile, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
-  const online = Object.values(results).filter(result => result.site?.status === 'online').length;
-  const publicRepositories = Object.values(results).filter(result => result.repository?.public === true).length;
-  console.log(`Disponibilité enregistrée : ${online}/${sites} sites accessibles, ${publicRepositories}/${repositories} dépôts publics. Les autres résultats peuvent être bloqués ou inconnus.`);
+
+    const results: Record<string, ProjectAvailability> = Object.create(null);
+    const tasks: Array<() => Promise<void>> = [];
+    for (const project of projects) {
+      const result: ProjectAvailability = {};
+      results[project.id] = result;
+      if (project.site) tasks.push(async () => { result.site = await checkSite(project.site!, allowedHosts); });
+      if (project.repository) tasks.push(async () => { result.repository = await checkRepository(project.repository!); });
+    }
+    let next = 0;
+    await Promise.all(Array.from({ length: Math.min(concurrency, tasks.length) }, async () => {
+      while (next < tasks.length) {
+        const task = tasks[next++];
+        if (task) await task();
+      }
+    }));
+    const snapshot: Availability = { checkedAt: new Date().toISOString(), projects: results };
+    await writeFile(availabilityFile, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+    const online = Object.values(results).filter(result => result.site?.status === 'online').length;
+    const publicRepositories = Object.values(results).filter(result => result.repository?.public === true).length;
+    console.log(`${catalogue.name} : ${online}/${sites} destinations accessibles${repositories ? `, ${publicRepositories}/${repositories} dépôts publics` : ''}.`);
+  }
 }
 
 run().catch(error => {

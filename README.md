@@ -9,6 +9,11 @@ Seuls les sites de projets vérifiés accessibles sont affichés. Chaque carte m
 directement au site. Les dépôts GitHub et fiches Steam Workshop ne sont pas des
 destinations, et un site indisponible ne produit aucune carte.
 
+La section **Raccourcis** reprend les liens publics documentés dans
+[l’ancienne configuration Nginx](https://github.com/linventif/prod-nginx-config/blob/main/linv.conf).
+Les profils et sous-domaines sont affichés uniquement après une vérification
+HTTPS réussie. Les services personnels et consoles d’administration sont exclus.
+
 ## Développement
 
 Node.js 24 et npm sont recommandés.
@@ -58,7 +63,11 @@ qui ne possède pas de `package.json` ; il faut déployer la nouvelle version de
 
 - `src/data/projects.json` : sites candidats, descriptions, catégories et sources.
 - `src/data/availability.json` : dernier instantané DNS/HTTPS.
+- `src/data/shortcuts.json` : liens courts publics et leurs destinations.
+- `src/data/subdomains.json` : sous-domaines publics et anciens alias documentés.
+- `src/data/shortcut-availability.json` et `subdomain-availability.json` : état de ces liens.
 - `scripts/scan-projects.ts` : vérification explicite des seules destinations du catalogue.
+- `scripts/generate-redirects.ts` : génération des règles Cloudflare Pages et Nginx.
 
 ```sh
 npm run scan
@@ -76,6 +85,28 @@ Le scan est un instantané daté, pas une surveillance en temps réel ; il ne se
 déclenche pas à chaque visite ou compilation. Après un scan, reconstruire le site.
 Pour ajouter un projet, renseigner sa fiche et ses sources, relancer le scan,
 puis reconstruire.
+
+## Raccourcis et redirections
+
+`npm run build` génère les mêmes raccourcis, avec ou sans slash final, dans
+`public/_redirects` pour Cloudflare Pages et dans `nginx-shortcuts.conf` pour
+Nginx. Les anciennes routes `/creations`, `/docs`, `/colors`, `/social` et `/terms`
+restent dirigées vers la liste des sites.
+
+Les deux anciens alias `gmi.linv.dev` et `discord.linv.dev` sont préparés dans
+`nginx-subdomains.conf` et `cloudflare/subdomain-redirects.csv` :
+
+- `gmi.linv.dev` mène à `gmod-integration.com`, en conservant le chemin et la requête.
+- `discord.linv.dev` mène à l’invitation Discord publique validée.
+
+Le CSV est prêt à être importé dans une liste de redirections en masse Cloudflare,
+puis à activer via une règle. Ces alias doivent aussi disposer d’enregistrements
+DNS proxifiés. Les fichiers du dépôt ne créent pas les enregistrements DNS ni les
+règles de compte. Tant qu’un alias ne répond pas, il n’est pas affiché sur le hub.
+
+Une redirection générale de zone vers le portfolio doit être retirée ou limitée
+pour laisser le hub et ses raccourcis répondre : les règles de zone sont exécutées
+avant les règles du site Pages.
 
 ## Stack
 

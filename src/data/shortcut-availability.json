@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-11-20T16:56:26.595Z",
+  "projects": {
+    "github": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://github.com/linventif",
+        "addresses": [
+          "20.208.89.80"
+        ]
+      }
+    },
+    "discord": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://discord.com/invite/EkVPk9y",
+        "addresses": [
+          "162.159.128.233",
+          "162.159.135.232",
+          "162.159.136.232",
+          "162.159.137.232",
+          "162.159.138.232"
+        ]
+      }
+    },
+    "steam": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://steamcommunity.com/id/linventif",
+        "addresses": [
+          "23.46.188.218"
+        ]
+      }
+    },
+    "twitter": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://x.com/linventif",
+        "addresses": [
+          "162.159.140.229"
+        ]
+      }
+    },
+    "twitch": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://www.twitch.tv/linventif",
+        "addresses": [
+          "151.101.130.214",
+          "151.101.194.214",
+          "151.101.2.214",
+          "151.101.66.214"
+        ]
+      }
+    },
+    "reddit": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://www.reddit.com/user/linventif/",
+        "addresses": [
+          "151.101.1.140",
+          "151.101.129.140",
+          "151.101.193.140",
+          "151.101.65.140"
+        ]
+      }
+    },
+    "paypal": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://www.paypal.com/paypalme/linventif",
+        "addresses": [
+          "104.18.6.168",
+          "104.18.7.168"
+        ]
+      }
+    },
+    "licence": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "addresses": [
+          "104.20.5.134",
+          "104.20.6.134",
+          "2606:4700:10::6814:586",
+          "2606:4700:10::6814:686"
+        ]
+      }
+    }
+  }
+}

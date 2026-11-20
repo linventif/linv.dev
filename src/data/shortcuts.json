@@ -1,0 +1,82 @@
+[
+  {
+    "id": "github",
+    "title": "GitHub",
+    "path": "/github",
+    "site": "https://github.com/linventif",
+    "icon": "github",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "discord",
+    "title": "Discord",
+    "path": "/discord",
+    "site": "https://discord.com/invite/EkVPk9y",
+    "icon": "link",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "steam",
+    "title": "Steam",
+    "path": "/steam",
+    "site": "https://steamcommunity.com/id/linventif",
+    "icon": "gamepad",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "twitter",
+    "title": "X / Twitter",
+    "path": "/twitter",
+    "site": "https://x.com/linventif",
+    "icon": "globe",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "twitch",
+    "title": "Twitch",
+    "path": "/twitch",
+    "site": "https://www.twitch.tv/linventif",
+    "icon": "gamepad",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "reddit",
+    "title": "Reddit",
+    "path": "/reddit",
+    "site": "https://www.reddit.com/user/linventif",
+    "icon": "link",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "paypal",
+    "title": "PayPal",
+    "path": "/paypal",
+    "site": "https://www.paypal.com/paypalme/linventif",
+    "icon": "link",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "licence",
+    "title": "Licence CC BY-SA 4.0",
+    "path": "/cc-by-sa-4.0",
+    "site": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "icon": "link",
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  }
+]

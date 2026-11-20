@@ -1,0 +1,58 @@
+[
+  {
+    "id": "open-process",
+    "title": "Open Process",
+    "site": "https://open-process.linv.dev",
+    "sources": [
+      "https://open-process.linv.dev"
+    ]
+  },
+  {
+    "id": "ndl25",
+    "title": "Nuit de l’Info · lien court",
+    "site": "https://ndl25.linv.dev",
+    "sources": [
+      "https://ndl25.linv.dev"
+    ]
+  },
+  {
+    "id": "nuit-de-linfo-2025",
+    "title": "Nuit de l’Info 2025",
+    "site": "https://nuit-de-linfo-2025.linv.dev",
+    "sources": [
+      "https://nuit-de-linfo-2025.linv.dev"
+    ]
+  },
+  {
+    "id": "m2-front-ctp",
+    "title": "Gestionnaire de tâches",
+    "site": "https://m2-front-ctp.linv.dev",
+    "sources": [
+      "https://m2-front-ctp.linv.dev"
+    ]
+  },
+  {
+    "id": "gmi",
+    "title": "Gmod Integration",
+    "site": "https://gmi.linv.dev",
+    "redirect": {
+      "target": "https://gmod-integration.com/",
+      "preservePath": true
+    },
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  },
+  {
+    "id": "discord",
+    "title": "Discord",
+    "site": "https://discord.linv.dev",
+    "redirect": {
+      "target": "https://discord.com/invite/EkVPk9y",
+      "preservePath": false
+    },
+    "sources": [
+      "https://github.com/linventif/prod-nginx-config/blob/main/linv.conf"
+    ]
+  }
+]
