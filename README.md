@@ -54,6 +54,12 @@ et `package-lock.json`, sur la branche `main` utilisée par Cloudflare.
 - Répertoire de sortie : `dist`.
 - Version Node.js : `24.20.0`, définie dans `.node-version`.
 
+L’adresse publique utilisée pour les liens canoniques et les aperçus de partage
+est `https://linv-dev.pages.dev`. Après activation du domaine personnalisé,
+définir `SITE_URL=https://linv.dev` dans l’environnement de compilation Cloudflare
+et redéployer. L’image de partage PNG (`public/social.png`, 1200 × 630) est servie
+sur cette même adresse et référencée dans les métadonnées Open Graph et Twitter.
+
 Cloudflare installe automatiquement les dépendances avant la compilation. Le site
 est statique : aucun adaptateur Cloudflare ni fichier Wrangler n’est nécessaire.
 Un déploiement qui récupère encore le commit `1a1ede5` utilise l’ancien portfolio,

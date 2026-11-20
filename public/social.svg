@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#141517"/><text x="90" y="170" fill="#f1f0ed" font-family="sans-serif" font-size="42" font-weight="700">linv<tspan fill="#f5a778">.</tspan>dev</text><text x="90" y="330" fill="#f1f0ed" font-family="sans-serif" font-size="72" font-weight="600">Sites &amp; applications</text><text x="93" y="410" fill="#a3a4ac" font-family="sans-serif" font-size="28">Les sites de Linventif, au même endroit.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#141517"/>
+  <rect x="76" y="77" width="4" height="476" rx="2" fill="#f5a778"/>
+  <g font-family="Arial, sans-serif">
+    <text x="112" y="137" fill="#f1f0ed" font-size="43" font-weight="700">linv<tspan fill="#f5a778">.</tspan>dev</text>
+    <text x="112" y="214" fill="#a3a4ac" font-size="16" letter-spacing="2">LE HUB DE LINVENTIF</text>
+    <text x="108" y="311" fill="#f1f0ed" font-size="70" font-weight="700" letter-spacing="-2">Sites &amp; applications.</text>
+    <text x="112" y="371" fill="#a3a4ac" font-size="25">Projets et raccourcis publics, au même endroit.</text>
+    <g fill="#1b1c1f" stroke="#34353b">
+      <rect x="112" y="438" width="270" height="66" rx="9"/>
+      <rect x="398" y="438" width="222" height="66" rx="9"/>
+      <rect x="636" y="438" width="186" height="66" rx="9"/>
+    </g>
+    <g fill="#f1f0ed" font-size="22">
+      <text x="136" y="479">Gmod Integration</text>
+      <text x="422" y="479">Open Process</text>
+      <text x="660" y="479">Portfolio</text>
+    </g>
+  </g>
+</svg>
