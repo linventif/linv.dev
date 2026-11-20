@@ -1,0 +1,1 @@
+export type IconName = 'github' | 'globe' | 'search' | 'sun' | 'moon' | 'close' | 'grid' | 'gamepad' | 'workflow' | 'person' | 'shield' | 'pen' | 'wifi' | 'package' | 'chip' | 'chart' | 'calendar' | 'copy' | 'translate' | 'code' | 'link';

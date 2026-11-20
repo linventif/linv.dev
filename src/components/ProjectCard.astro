@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+import type { Project } from '../data/catalog';
+interface Props { project: Project }
+const { project } = Astro.props;
+const host = new URL(project.site).hostname;
+---
+<article class="card project-card" data-project data-category={project.category} data-search={[project.title, project.description, ...project.tags].join(' ')}>
+  <div class="project-heading">
+    <span class="project-icon"><Icon name={project.icon} size={21} /></span>
+    <h2><a class="project-title" href={project.site} target="_blank" rel="noopener noreferrer">{project.title}<span class="sr-only"> (nouvel onglet)</span></a></h2>
+  </div>
+  <p class="project-description">{project.description}</p>
+  <div class="project-footer">
+    <span class="project-destination"><Icon name="globe" size={14} /><span>{host}</span></span>
+  </div>
+</article>

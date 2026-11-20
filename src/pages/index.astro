@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects, categories, checkedAt } from '../data/catalog';
+const portfolio = projects.find(project => project.id === 'portfolio');
+const formattedDate = new Intl.DateTimeFormat('fr-FR', {
+  day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris',
+}).format(new Date(checkedAt));
+---
+<Layout>
+  <header class="site-header shell">
+    <a class="brand" href="/" aria-label="linv.dev — accueil">linv<span>.</span>dev</a>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-square theme-toggle" type="button" aria-label="Activer le thème clair" aria-pressed="false">
+        <Icon name="sun" class="sun-icon" size={18} /><Icon name="moon" class="moon-icon" size={18} />
+      </button>
+    </div>
+  </header>
+  <main id="contenu" class="shell">
+    <section id="projets" class="directory" aria-labelledby="projects-title">
+      <div class="directory-heading">
+        <div><h1 id="projects-title">Sites</h1><p>Les sites et applications en ligne de Linventif.</p></div>
+        <div class="search-field input">
+          <Icon name="search" size={18} />
+          <label class="sr-only" for="project-search">Rechercher un site</label>
+          <input id="project-search" type="search" placeholder="Rechercher…" autocomplete="off" />
+          <kbd class="kbd search-shortcut" aria-hidden="true">/</kbd>
+        </div>
+      </div>
+      {portfolio && <aside class="portfolio-callout" aria-labelledby="portfolio-title">
+        <div class="portfolio-copy">
+          <h2 id="portfolio-title">Envie de voir plus de projets ?</h2>
+          <p>Retrouve mes autres réalisations et mon parcours sur mon portfolio.</p>
+        </div>
+        <a class="btn btn-primary portfolio-button" href={portfolio.site} target="_blank" rel="noopener noreferrer">
+          Voir tous mes projets<span class="sr-only"> (nouvel onglet)</span>
+        </a>
+      </aside>}
+      <div class="category-filters" role="group" aria-label="Filtrer les sites par catégorie">
+        {categories.map(category => <button type="button" class:list={['btn', 'filter-button', { 'filter-active': category.id === 'all' }]} data-filter={category.id} aria-pressed={category.id === 'all'}>{category.id === 'all' ? 'Tous' : category.label}</button>)}
+      </div>
+      <div class="results-info" aria-live="polite" aria-atomic="true">
+        <span id="result-count">{projects.length} sites</span>
+        <button id="clear-filters" class="clear-filters" type="button" hidden>Réinitialiser <Icon name="close" size={14} /></button>
+      </div>
+      <div class="project-grid" id="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h2>Aucun site trouvé</h2><p>Essaie un autre mot-clé ou une autre catégorie.</p>
+        <button class="btn btn-primary" id="reset-search" type="button">Voir tous les sites</button>
+      </div>
+      <noscript><p class="noscript-note">Tous les sites sont affichés. La recherche et les filtres nécessitent JavaScript.</p></noscript>
+    </section>
+  </main>
+  <footer class="site-footer shell">
+    <span>Linventif</span>
+    <span>Liens vérifiés le <time datetime={checkedAt}>{formattedDate}</time></span>
+  </footer>
+  <script>import '../scripts/hub';</script>
+</Layout>

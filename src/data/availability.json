@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-11-20T16:39:03.264Z",
+  "projects": {
+    "gmod-integration": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://gmod-integration.com/",
+        "addresses": [
+          "104.18.18.80",
+          "104.18.19.80",
+          "2606:4700::6812:1250",
+          "2606:4700::6812:1350"
+        ]
+      }
+    },
+    "open-process": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://open-process.linv.dev/",
+        "addresses": [
+          "104.18.8.62",
+          "104.18.9.62",
+          "2606:4700::6812:83e",
+          "2606:4700::6812:93e"
+        ]
+      }
+    },
+    "portfolio": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://gregoire-becue.me/fr/",
+        "addresses": [
+          "104.21.8.198",
+          "172.67.130.156",
+          "2606:4700:3037::6815:8c6",
+          "2606:4700:3037::ac43:829c"
+        ]
+      }
+    },
+    "nuit-de-l-info": {
+      "site": {
+        "status": "online",
+        "httpStatus": 200,
+        "finalUrl": "https://nuit-de-linfo-2025.linv.dev/",
+        "addresses": [
+          "104.18.8.62",
+          "104.18.9.62",
+          "2606:4700::6812:83e",
+          "2606:4700::6812:93e"
+        ]
+      }
+    }
+  }
+}

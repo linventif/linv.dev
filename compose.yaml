@@ -1,0 +1,9 @@
+name: linv-portfolio
+
+services:
+  nginx:
+    build: .
+    image: linv-hub:local
+    restart: unless-stopped
+    ports:
+      - "8099:80"

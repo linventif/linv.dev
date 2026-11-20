@@ -1,0 +1,10 @@
+norton*
+node_modules/
+dist/
+.astro/
+.cache/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/

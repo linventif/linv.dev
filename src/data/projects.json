@@ -1,0 +1,69 @@
+[
+  {
+    "id": "gmod-integration",
+    "title": "Gmod Integration",
+    "description": "Relie ton serveur Garry’s Mod à Discord.",
+    "tags": [
+      "Garry’s Mod",
+      "Discord",
+      "Open source"
+    ],
+    "sources": [
+      "https://gregoire-becue.me/fr/projets/snee-gmod-integration/",
+      "https://github.com/gmod-integration/gmod-integration-monorepo"
+    ],
+    "category": "gaming",
+    "icon": "gamepad",
+    "site": "https://gmod-integration.com"
+  },
+  {
+    "id": "open-process",
+    "title": "Open Process",
+    "description": "Diagrammes, BPMN, UML et réseaux de Petri.",
+    "tags": [
+      "Rust",
+      "WebAssembly",
+      "Open source"
+    ],
+    "sources": [
+      "https://gregoire-becue.me/fr/projets/open-process/",
+      "https://github.com/linventif/open-process"
+    ],
+    "category": "apps",
+    "icon": "workflow",
+    "site": "https://open-process.linv.dev"
+  },
+  {
+    "id": "portfolio",
+    "title": "Grégoire Bécue",
+    "description": "Mon parcours et l’ensemble de mes réalisations.",
+    "tags": [
+      "Web",
+      "IA",
+      "3D"
+    ],
+    "sources": [
+      "https://gregoire-becue.me/fr/"
+    ],
+    "category": "apps",
+    "icon": "person",
+    "site": "https://gregoire-becue.me/fr/"
+  },
+  {
+    "id": "nuit-de-l-info",
+    "title": "Nuit de l’Info 2025",
+    "description": "Un projet collectif pour un numérique responsable.",
+    "tags": [
+      "SolidJS",
+      "Express",
+      "Projet collectif"
+    ],
+    "sources": [
+      "https://gregoire-becue.me/fr/projets/m1-nuit-de-l-info/",
+      "https://github.com/linventif/m1-nuit-de-l-info"
+    ],
+    "category": "experiments",
+    "icon": "moon",
+    "site": "https://nuit-de-linfo-2025.linv.dev"
+  }
+]
